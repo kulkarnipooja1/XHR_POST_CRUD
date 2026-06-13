@@ -28,7 +28,7 @@ function createPostCards(arr){
 	let result = '';
 	 arr.forEach(post => {
 		 result += `
-		 <div class="col-md-3 mb-3" id ='${post.id}'> 
+		 <div class="col-md-6 mb-3" id ='${post.id}'> 
                 <div class="card h-100 ">
                     <div class="card-header">
                         <h3>${post.title}</h3> <!--Post ka Title -->
@@ -50,7 +50,7 @@ function createPostCards(arr){
 }
 
 function fetchPosts(){
-	
+	spinner.classList.remove('d-none');
 	let xhr = new XMLHttpRequest() 
 	  xhr.open('GET', POST_URL, true)
 	  xhr.send(null) 
@@ -64,7 +64,9 @@ function fetchPosts(){
 		}else{
 			snackbar('Something went wrong', 'error')
 		}	
-	}	 
+         spinner.classList.add('d-none')
+	}	
+   
 }
 fetchPosts()
  
@@ -89,7 +91,7 @@ fetchPosts()
 					postForm.reset()
 	
 			       let col = document.createElement('div')
-				        col.className = 'col-md-3 mb-3'
+				        col.className = 'col-md-6 mb-3'
 				        col.id = res.id  
 				        col.innerHTML =
 				            `<div class="card h-100 ">

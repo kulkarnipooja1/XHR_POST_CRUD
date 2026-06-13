@@ -15,7 +15,9 @@ body{
     align-items: center;
 }
 .card-header h3 {
+    background-color: gray;
     white-space: nowrap;
+    padding : 15px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -24,3 +26,11 @@ body{
     white-space: normal;
     overflow: visible;
 }
+
+#title,
+#body,
+#userId{
+    background-color: #fff3cd; /* Light Yellow */
+}
+
+
